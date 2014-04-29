@@ -34,4 +34,12 @@ describe Album do
     expect(album1.all_artists).to eq ['2Pac', '4', 'Beatles', 'Beetles', 'Led Zeppelin', 'Metallica']
 
   end
+  it 'can determine if it is a single' do
+    track1 = Track.new(title: 'track_title1', artists: ['Beatles', 'Led Zeppelin', '2Pac', 'Metallica'], duration: 240, price: 1.00)
+   # track2 = Track.new(title: 'track_title2', artists: ['Beetles', '4', '2Pac', 'Metallica'], duration: 10, price: 2.00)
+    album1 = Album.new(album_title: 'God', tracks: [track1, track2])
+
+    expect(album1).not_to be_single
+
+  end
 end

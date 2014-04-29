@@ -23,8 +23,13 @@ class Album
   end
 
   def all_artists
-    tracks.map{|track| track.artists }.reduce(:+).uniq.sort
+    tracks.map{ | track | track.artists }.reduce(:+).uniq.sort
   end
+  def single?
+    tracks.length == 1
+
+  end
+
 end
 
 #binding.pry
